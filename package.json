@@ -1,5 +1,5 @@
 {
-  "name": "coin",
+  "name": "drag-drop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,19 +11,21 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.20",
-    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.2.2",
     "react-query": "^3.34.8",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "recoil": "^0.6.1",
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7",
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
@@ -45,9 +47,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build ",
-    "predeploy": "npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +66,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://seon9jun.github.io/coin"
+  }
 }
