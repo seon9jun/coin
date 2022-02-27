@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import { useForm } from 'react-hook-form';
 import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { TodoProps, toDoState } from '../atom';
+import { jsonLocalStorage } from '../util';
 import { MemoizedDraggableCard } from './DraggableCard';
 
 const BoardWrapper = styled.div`
@@ -60,9 +61,13 @@ export const Board: React.FC<BoardProps> = ({ toDos, boardId }: BoardProps) => {
 
 	const onValid = ({ toDo }: Form) => {
 		const newToDo = { id: Date.now(), text: toDo };
+
 		setTodos((allBoards) => {
-			console.log('allBoards', [boardId]);
-			console.log([boardId], [allBoards[boardId]]);
+			jsonLocalStorage.setItem('todos', {
+				...allBoards,
+				[boardId]: [...allBoards[boardId], newToDo],
+			});
+
 			return {
 				...allBoards,
 				[boardId]: [...allBoards[boardId], newToDo],
