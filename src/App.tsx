@@ -3,6 +3,7 @@ import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { toDoState } from './atom';
+import { AddBoard } from './Components/AddBoard';
 import { Board } from './Components/Board';
 import { jsonLocalStorage } from './util';
 
@@ -76,6 +77,7 @@ function App() {
 
 	return (
 		<>
+			<AddBoard />
 			<DragDropContext onDragEnd={onDragEnd}>
 				<Wrapper>
 					<Boards>
